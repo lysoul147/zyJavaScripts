@@ -3,15 +3,13 @@
 
 name: ziye-sync
 on:
-  push:
-    branches: [ master ]
   schedule:
-    - cron: '1 6-23 * * *'
+    - cron: '1 7-23 * * *'
   workflow_dispatch:
   watch:
     types: started
   repository_dispatch:
-    types: sync-6Svip120apk69-gitee_q8qsTAUA_cThxc1RBVUE
+    types: sync-ziye888-JavaScript
 jobs:
   repo-sync:
     env:
@@ -23,11 +21,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync 6Svip120apk69-gitee_q8qsTAUA_cThxc1RBVUE
+      - name: sync ziye888-JavaScript
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE.git"
+          source_repo: "https://github.com/ziye888/JavaScript.git"
           source_branch: "main"
           destination_branch: "main"
           github_token: ${{ secrets.PAT }}
